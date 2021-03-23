@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Archives{% endblock %}
+{% block content %}
+    <h1>Archives</h1>
+    <p>Here is where you can go to look for calls older than 1 day. Text of previous calls along with time data will be available for up to 2 months. The audio from calls will be deleted after 72 hours.</p>
+    <p>The only way to view these files is to download them. Please click on a file to begin your download.</p>
+
+    <button type="submit" onclick="window.open('file.doc')">Download!</button>
+{% endblock %}

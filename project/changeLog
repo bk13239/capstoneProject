@@ -1,0 +1,96 @@
+Completed:
+    -Make speech recognition function
+    -Made speech recording function
+    -Made program to scan for sounds
+
+Work In Progress:
+#TODO    -Microphone work with scanner/Broadcastify
+#TODO    -Make recognition better using multiple APIs
+#TODO    -Make separate program to view data
+#TODO    -Fine tune audio settings
+
+
+Daily Logs:
+    9/15/20
+        -Converted scripts to functions
+        -Made overarching script
+        -Made error messages
+        -Set output file name system
+    9/21/20
+        -Made Changelog.txt
+    9/22/20
+        -Setup virtual environment
+        -Worked on installing packages to virtual environment
+        -Began working on ScanningTones.py to scan for Call Tones to begin recording and manipulation using speechManipulation.py
+        -PostgreSQL is the leading database candidate at this time (Looking for place to store audio)
+    9/28/20 - 9/29/20
+        -Setup virtual environment and made Python bootable from USB
+        -Got Python 3.6 working on school PC
+        -Looked into making scanningTones.py run in background using https://stackoverflow.com/questions/59125493/how-to-constantly-run-python-script-in-the-background-on-windows
+    10/5/20
+        -Made speechRecord.py obsolete with scanningTones.py, will be deleted from version starting today forward, kept in older versions for reference
+        -Made scanningTones.py to listen, record, then listen again
+        -Reference for creating scanningTones.py - https://stackoverflow.com/questions/18406570/python-record-audio-on-detected-sound
+        -Added convertSpeech method to scanningTones.py, waiting to test
+        -Worked with making a numpy array save to a text file
+    10-13-20
+        -Decided that a Numpy/Pandas array will be used instead of a database fr the foreseeable future
+        -Haven't tested scanningTones.py with convertSpeech incorporated yet, if success, speechTest.py and speechManipulation.py will be obsolete
+        -Experimented with CSV files and saving an array to them
+        -Experimented with using openpyxl package to save output to spreadsheet instead of database
+    10-19-20 - 10/20/20
+        -Tested scanningTones.py, works instead of speechManipulation.py, speechRecord.py, and speechTest.py
+        -Make scanningTones.py record for less time after silence in audio
+        -Corrected a bug where time and date was not properly formatting on callOutput.txt
+        -Want to track date/time, Text, Ref to audio
+        -speechRecord.py, speechManipulation.py, & speechTest.py are all obsolete; Will be deleted form this and all future versions, will remain in formers
+        -Made the folder OutputAudio for saving call audio to
+        -In the Recorder.write() function, added path to OutputAudio folder
+        -Decided against a spreadsheet for the time being
+        -Using a Numpy array saved to a CSV file
+        -Look at numTest.py and numpTestREAD.py for examples on how to read/write to CSV using Pandas and Numpy
+        -Links to used resources: https://stackoverflow.com/questions/3518778/how-do-i-read-csv-data-into-a-record-array-in-numpy  https://stackoverflow.com/questions/31247198/python-pandas-write-content-of-dataframe-into-text-file
+    10/27/20
+        -Presented progress to class
+        -Found error in saving to OutputAudio folder, circumvented and will fix later
+        -#TODO Fix saving to OutputAudio
+        -Learned how to remove a column from a csv file when bringing it into Python using Pandas
+        -Decided to try using the CSV package to edit the CSV output file
+        -Reference: https://docs.python.org/3/library/csv.html#writer-objects
+    11/3/20
+        -Made writecsv function in csvOutput.py to convert current output into a csv file
+        -Changed location fo date and time objects and variables in scanningTones.py to increase accuracy, waiting to test
+    11/10/20
+        -Looked into file saving and directories for the audio outputs
+        -Working on making save to a separate folder
+        -Determined that it is unrealistic and unfeasible to have files save into a directory that is not the project directory, may reassess further down the line
+        -Cleaned up workspace
+        -Removed csvTest.py, numpTest.csv
+    11/24/20
+        -Removed numTest.py, numpTestREAD.py
+        -Added writecsv function to scanningTones.py, making csvOutput.py obsolete
+        -Removed scanningTones.py
+        -Tested new accuracy of date/time (Time works down to the second of END OF RECORDING)
+        -Cleared callOutput.csv and audio files from test
+        -Created outputTest.py to test input through speaker
+        -Further explored potential of recording using Broadcastify, not feasible on Windows, will attempt on a Linux distro
+    12/8/20
+        -Removed callOutput.txt
+        -Tested multiple GUI formats
+    12/15/20
+        -Decided on using a Flask Web Application to make visuals for software
+        -#TODO Make date and time in csv integer values instead of strings
+        -Removed kivyTest.py, qtTest.py, guiTest.py, tkint.py
+        -Flask guide: https://www.youtube.com/watch?v=mqhxxeeTbu0&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX
+    12/22/20
+        -Worked through tutorials 1 & 2 in Flask series
+        -Will work on others today
+        -Setup account on pythonanywhere.com for hosting Flask web application
+    1/5/21
+        -Finished tutorial 4 of Flask
+        -Message Flashing not working (Video 6)
+        -Finished class at 4:29 into video
+    1/19/21
+        -Finished tutorial 8
+        -Got to 6:19 in tutorial 9
+        -Was not able to get CSS to alter page in tutorial 9

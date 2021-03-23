@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+    <div class="aboutWho">
+        <h1>Who Am I?</h1>
+        <p>I am a student from Spencerport High School in New York who is also very interested in the field of firefighting. For a project for one of my classes, I decided to make this website. I am also a volunteer with the Spencerport Fire District.</p>
+    </div>
+    <div class="aboutWhat">
+        <h1>What Is This?</h1>
+        <p>This is my senior year Computing Capstone project. I have decided to make a website that displays calls from the Monroe County Fire Dispatch (Ops 5) channel for the public to see. One the main page, you can view information about the call such as when it happened, what happened in a text format, and you can listen to the audio recording from the dispatcher. Currently, the text format is not 100% correct due to the dispatchers talking quickly and such so if it doesn't make sense, please refer to the audio recording.</p>
+    </div>
+    <div class="aboutWhy">
+        <h1>Why?</h1>
+        <p>I have always been fascinated with firefighting and their communications so I decided to make this website and accompanying program to share what I enjoy with the world.</p>
+    </div>
+    <div class="aboutHow">
+        <h1>How Does It Work?</h1>
+        <p>I have developed a python script that is always listening to the scanner and when tones drop for dispatching, it begins recording. After recording for the duration of the dispatch, the script then saves the recording to a .wav file and uploads it to the server. While uploading, it also gets converted into text using Google's Speech Recognition API. Then finally, the date and time, the text, and the audio file reference get put into a CSV file and uploaded to the website to view.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+    <h1>Contact</h1>
+
+    {% if success %}
+        <p>Thank you for the message. We will get back to you within 48 hours!</p>
+    {% else %}
+        {% for message in form.name.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.email.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.subject.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.message.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        <form action="{{ url_for('contact') }}" method="post">
+            {{ form.hidden_tag() }}
+            {{ form.name.label() }}
+            {{ form.name }}
+            {{ form.email.label() }}
+            {{ form.email }}
+            {{ form.subject.label() }}
+            {{ form.subject }}
+            {{ form.message.label() }}
+            {{ form.message }}
+            {{ form.submit }}
+        </form>
+    {% endif %}
+{% endblock %}
